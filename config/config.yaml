@@ -1,0 +1,108 @@
+# ──────────────────────────────────────────────────────────────────────────────
+# ECG Arrhythmia Classification — Central Configuration
+# ──────────────────────────────────────────────────────────────────────────────
+
+# ── Execution mode ────────────────────────────────────────────────────────────
+# "fast"  : 6 records (~13 k beats, ~5 min end-to-end)
+# "full"  : 48 records (~110 k beats, ~60 min end-to-end)
+mode: fast
+
+# ── Reproducibility ───────────────────────────────────────────────────────────
+random_seed: 42
+
+# ── Signal parameters ─────────────────────────────────────────────────────────
+sampling_rate: 360
+bandpass_low: 0.5
+bandpass_high: 40.0
+notch_freq: 60.0
+bandpass_order: 4
+
+# ── Heartbeat segmentation ────────────────────────────────────────────────────
+window_before: 90   # samples before R-peak (250 ms at 360 Hz)
+window_after: 110   # samples after  R-peak (305 ms)
+# total window = 200 samples = 556 ms
+
+# ── Patient-wise data split ───────────────────────────────────────────────────
+test_size: 0.2
+n_cv_folds: 5
+
+# ── All 48 MIT-BIH records ────────────────────────────────────────────────────
+all_records:
+  - "100"
+  - "101"
+  - "102"
+  - "103"
+  - "104"
+  - "105"
+  - "106"
+  - "107"
+  - "108"
+  - "109"
+  - "111"
+  - "112"
+  - "113"
+  - "114"
+  - "115"
+  - "116"
+  - "117"
+  - "118"
+  - "119"
+  - "121"
+  - "122"
+  - "123"
+  - "124"
+  - "200"
+  - "201"
+  - "202"
+  - "203"
+  - "205"
+  - "207"
+  - "208"
+  - "209"
+  - "210"
+  - "212"
+  - "213"
+  - "214"
+  - "215"
+  - "217"
+  - "219"
+  - "220"
+  - "221"
+  - "222"
+  - "223"
+  - "228"
+  - "230"
+  - "231"
+  - "232"
+  - "233"
+  - "234"
+
+# ── Fast mode subset (diverse arrhythmia types) ───────────────────────────────
+fast_records:
+  - "100"   # Normal sinus rhythm
+  - "105"   # PVC, noise
+  - "108"   # PVC, left bundle branch block
+  - "200"   # Multifocal PVC, PAC
+  - "201"   # PVC, PAC
+  - "208"   # PVC, fusion, nodal
+
+# ── Class imbalance strategies to test ───────────────────────────────────────
+balancing_strategies:
+  - none
+  - class_weight
+  - undersample
+  - smote
+  - smote_tomek
+  - smote_enn
+
+# ── SHAP ──────────────────────────────────────────────────────────────────────
+shap_sample_size: 300
+
+# ── Paths (relative to project root) ─────────────────────────────────────────
+paths:
+  raw_data:       data/raw
+  processed_data: data/processed
+  models:         models
+  figures:        results/figures
+  metrics:        results/metrics
+  reports:        results/reports

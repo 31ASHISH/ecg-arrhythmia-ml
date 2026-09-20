@@ -1,0 +1,38 @@
+# ── Data (downloaded by scripts/download_data.py) ────────────────────────────
+data/raw/
+data/processed/
+
+# ── Generated model files ─────────────────────────────────────────────────────
+models/
+*.joblib
+*.pkl
+
+# ── Generated results (re-run pipeline to regenerate) ────────────────────────
+results/figures/
+results/metrics/
+results/reports/
+
+# ── Python artifacts ──────────────────────────────────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Environment ───────────────────────────────────────────────────────────────
+.env
+.venv/
+venv/
+env/
