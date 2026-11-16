@@ -27,8 +27,6 @@ Explainability (Feature importance, Permutation, SHAP)
         ↓
 Final Evaluation (patient-wise, test set touched once)
         ↓
-Streamlit Dashboard (9 pages)
-        ↓
 Documentation & Presentation
 ```
 
@@ -37,5 +35,5 @@ Documentation & Presentation
 - [x] src/ core library (13 modules)
 - [x] scripts/ pipeline (6 scripts)
 - [x] Unit tests (24 tests, 100% pass)
-- [x] Streamlit application (9 pages)
+- [x] Comprehensive Academic Research Report & Presentation
 - [x] README, LICENSE, documentation

@@ -5,7 +5,6 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.4%2B-orange.svg)](https://scikit-learn.org)
 [![Tests](https://img.shields.io/badge/Tests-24%2F24%20Passing-brightgreen.svg)](tests/)
-[![Dashboard](https://img.shields.io/badge/Streamlit-9--Page%20App-red.svg)](app/streamlit_app.py)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
 ---
@@ -89,7 +88,7 @@ Evaluation & Explainability
   · Metric Suite: Accuracy, Balanced Acc, Macro F1, Weighted F1, PR-AUC, per-class F1
   · Permutation Importance, Tree Importance, 2D PCA Projections
     ↓
-Streamlit Research Dashboard (9 Interactive Pages)
+Final Academic Research Report & Presentation
 ```
 
 ---
@@ -244,9 +243,6 @@ ecg-arrhythmia-ml/
 │   ├── figures/                     # Evaluation charts (PNG)
 │   ├── metrics/                     # JSON & CSV experiment outputs
 │   └── reports/                     # Summary reports
-│
-├── app/
-│   └── streamlit_app.py             # 9-page research dashboard
 └── tests/
     └── test_pipeline.py             # 24 unit tests (100% pass)
 ```
@@ -283,13 +279,7 @@ python scripts/evaluate.py
 python scripts/run_experiments.py --skip-window --skip-noise
 ```
 
-### 3. Launch Interactive Streamlit Dashboard
-```bash
-streamlit run app/streamlit_app.py
-```
-*The dashboard includes 9 interactive dark-mode pages for dataset exploration, interactive waveform filtering, feature distributions, model comparison tables, live beat prediction, and ablation visualizers.*
-
-### 4. Run Automated Unit Tests
+### 3. Run Automated Unit Tests
 ```bash
 python -m pytest tests/ -v
 # Output: 24 passed, 3 warnings in ~28s (100% pass rate)
