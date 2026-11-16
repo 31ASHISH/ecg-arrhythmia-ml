@@ -36,3 +36,8 @@ desktop.ini
 .venv/
 venv/
 env/
+
+# ── Reference packages ────────────────────────────────────────────────────────
+PROJECT_RESEARCH_PACKAGE.zip
+RESEARCH_DELIVERABLES/
+
